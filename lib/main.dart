@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData(fontFamily: 'Sans Serif Pro'),
       routeInformationParser: routes.routeInformationParser,
       routerDelegate: routes.routerDelegate,
       routeInformationProvider: routes.routeInformationProvider,
