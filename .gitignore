@@ -32,7 +32,7 @@ migrate_working_dir/
 .pub/
 /build/
 
-*.env/
+.env.*
 *.freezed.dart
 
 # Web related
@@ -48,3 +48,5 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+android/app/src/main/AndroidManifest.xml
+ios/Runner/Info.plist
