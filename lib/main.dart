@@ -1,8 +1,18 @@
+import 'package:air/config/environment.dart';
 import 'package:air/route/routes.dart';
 import 'package:air/utils/setup.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+// ignore: depend_on_referenced_packages
+import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await dotenv.load();
+  sb.Supabase.initialize(
+      anonKey: Environment.supabaseAnonKey!,
+      url: Environment.supabaseUrl!,
+      debug: true);
   setup();
   runApp(const MyApp());
 }
