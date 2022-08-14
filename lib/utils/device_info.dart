@@ -1,7 +1,9 @@
-class DeviceInfo {
-  static double? height;
-  static double? width;
+import 'package:air/utils/setup.dart';
 
-  set setHeight(double h) => height = h;
-  set setWidth(double w) => width = w;
+class DeviceInfo {
+  double? height;
+  double? width;
+
+  static set setHeight(double h) => getIt.get<DeviceInfo>().height = h;
+  static set setWidth(double w) => getIt.get<DeviceInfo>().height = w;
 }

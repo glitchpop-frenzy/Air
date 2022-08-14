@@ -1,7 +1,9 @@
 import 'package:air/route/routes.dart';
+import 'package:air/utils/setup.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  setup();
   runApp(const MyApp());
 }
 
