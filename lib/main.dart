@@ -1,4 +1,3 @@
-import 'package:air/config/environment.dart';
 import 'package:air/route/routes.dart';
 import 'package:air/utils/setup.dart';
 import 'package:flutter/material.dart';
@@ -8,10 +7,12 @@ import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load();
+  await dotenv.load(fileName: '.env');
   sb.Supabase.initialize(
-      anonKey: Environment.supabaseAnonKey!,
-      url: Environment.supabaseUrl!,
+      anonKey:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBodXVscmJldWNrem95a2d1bnJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjAzNzI4MTUsImV4cCI6MTk3NTk0ODgxNX0.hxXumQnt1Pu1MM-0bJfglyqM9oTIwBHI2uO7ZUk5LUE', // Environment.supabaseAnonKey!,
+      url:
+          'https://phuulrbeuckzoykgunrw.supabase.co', //Environment.supabaseUrl!,
       debug: true);
   setup();
   runApp(const MyApp());
