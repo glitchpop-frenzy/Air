@@ -8,13 +8,16 @@ part 'auth_state.dart';
 
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final IAuthRepository iAuthRepository;
-  AuthBloc(this.iAuthRepository) : super(const _Initial()) {
+  final IAuthRepository authRepository;
+  AuthBloc(this.authRepository) : super(const _Initial()) {
     on<AuthEvent>((event, emit) async {
       event.map(
-          authenticate: (_) {
+          authenticate: (_) async {
             emit(const _Loading());
-            iAuthRepository.authenticate();
+            final response = await authRepository.authenticate();
+            // ignore: avoid_print
+            print(response);
+            // response.map((r) => print(r.user));
           },
           unauthenticate: (_) {});
     });

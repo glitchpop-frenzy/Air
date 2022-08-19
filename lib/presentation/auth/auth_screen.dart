@@ -1,56 +1,42 @@
+import 'package:air/application/auth/auth_bloc.dart';
+import 'package:air/presentation/auth/widgets/login_button.dart';
 import 'package:air/themes/theme.dart';
+import 'package:air/config/global.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.accentGrey1,
-      body: SafeArea(
-        child: ScrollConfiguration(
-          behavior: const ScrollBehavior(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const SizedBox(height: 70),
-              const Center(
-                child: Text(
-                  'Air',
-                  style: AppStyles.headText1,
-                ),
-              ),
-              const Center(
-                child: Text(
-                  'Just better',
-                  style: AppStyles.subheadText1,
-                ),
-              ),
-              const SizedBox(height: 75),
-              ElevatedButton.icon(
-                style: ButtonStyle(
-                  fixedSize: MaterialStateProperty.all(const Size(300, 65)),
-                  shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20))),
-                  backgroundColor:
-                      MaterialStateProperty.all(AppColors.primaryWhite),
-                ),
-                onPressed: () {},
-                icon: const Icon(
-                  FontAwesomeIcons.twitter,
-                  color: AppColors.accentGrey1,
-                ),
-                label: const Text(
-                  'Login with Twitter',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: AppColors.accentGrey1,
+    return BlocProvider(
+      create: (_) => getIt.get<AuthBloc>(),
+      child: Scaffold(
+        backgroundColor: AppColors.accentGrey1,
+        body: SafeArea(
+          child: ScrollConfiguration(
+            behavior: const ScrollBehavior(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                SizedBox(height: 70),
+                Center(
+                  child: Text(
+                    'Air',
+                    style: AppStyles.headText1,
                   ),
                 ),
-              )
-            ],
+                Center(
+                  child: Text(
+                    'Just better',
+                    style: AppStyles.subheadText1,
+                  ),
+                ),
+                SizedBox(height: 75),
+                LoginButton(),
+              ],
+            ),
           ),
         ),
       ),

@@ -6,5 +6,5 @@ part 'auth_failure.freezed.dart';
 class AuthFailure with _$AuthFailure {
   const factory AuthFailure.serverError() = ServerError;
   const factory AuthFailure.networkRequestFailed() = NetworkRequestFailed;
-  const factory AuthFailure.verificationFailure() = VerificationFailure;
+  const factory AuthFailure.authenticationFailure() = VerificationFailure;
 }

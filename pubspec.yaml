@@ -44,6 +44,8 @@ dependencies:
   app_links_web: ^1.0.0
   flutter_bloc: ^8.1.1
   injectable: ^1.5.3
+  injectable_generator: ^1.5.4
+  supabase_flutter: ^0.3.3
 
 dev_dependencies:
   flutter_test:
@@ -55,7 +57,6 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
-  supabase_flutter: ^0.3.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

@@ -34,6 +34,7 @@ migrate_working_dir/
 
 .env
 *.freezed.dart
+*.config.dart
 
 # Web related
 lib/generated_plugin_registrant.dart

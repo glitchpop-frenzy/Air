@@ -1,20 +1,22 @@
+import 'package:air/config/global.dart';
+import 'package:air/infrastructure/config/injection.dart';
 import 'package:air/route/routes.dart';
-import 'package:air/utils/setup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 // ignore: depend_on_referenced_packages
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
-import 'config/environment.dart';
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  configureInjection();
   await dotenv.load(fileName: '.env');
-  sb.Supabase.initialize(
-      anonKey: Environment.supabaseAnonKey!,
-      url: Environment.supabaseUrl!,
-      debug: true);
-  setup();
+  await sb.Supabase.initialize(
+    anonKey: Global.supabaseAnonKey!,
+    url: Global.supabaseUrl!,
+    debug: true,
+  );
+
   runApp(const MyApp());
 }
 
