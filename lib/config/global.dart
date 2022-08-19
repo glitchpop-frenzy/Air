@@ -11,4 +11,5 @@ class Global {
   static String? get supabaseAnonKey => dotenv.env['SUPABASE_ANON_KEY'];
   static String? get redirectUrl => dotenv.env['SUPABASE_REDIRECT_URL'];
   static String? get loginCallback => dotenv.env['SUPABASE_LOGIN_CALLBACK'];
+  static String get twitterCallback => dotenv.get('TWITTER_REDIRECT_URL');
 }

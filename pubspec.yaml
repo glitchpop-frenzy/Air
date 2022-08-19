@@ -46,6 +46,8 @@ dependencies:
   injectable: ^1.5.3
   injectable_generator: ^1.5.4
   supabase_flutter: ^0.3.3
+  firebase_auth: ^3.6.4
+  firebase_core: ^1.21.0
 
 dev_dependencies:
   flutter_test:

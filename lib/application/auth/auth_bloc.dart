@@ -15,9 +15,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           authenticate: (_) async {
             emit(const _Loading());
             final response = await authRepository.authenticate();
-            // ignore: avoid_print
-            print(response);
-            // response.map((r) => print(r.user));
           },
           unauthenticate: (_) {});
     });
